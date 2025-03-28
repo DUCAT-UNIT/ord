@@ -1408,7 +1408,7 @@ impl Index {
       })
       .collect::<Result<Vec<InscriptionId>>>()?;
 
-    let more = ids.len() > page_size.try_into().unwrap();
+    let more = ids.len() > page_size as usize;
 
     if more {
       ids.pop();
